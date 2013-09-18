@@ -23,6 +23,10 @@ gem 'mini_magick'
 gem 'font-awesome-sass-rails'
 gem 'bourbon'
 
+group :production do
+	gem 'rails_12factor'
+end
+
 group :doc do
 	gem 'sdoc', require: false
 end
