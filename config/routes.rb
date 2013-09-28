@@ -7,7 +7,7 @@ Ciadascapas::Application.routes.draw do
 	get "/produtos/:category/(:subcategory)" => "photos#index"
 	
 	resources :questions, path: "duvidas"
-	resources :contacts, path: "contato", path_names: {new: "novo"}
+	resources :contacts, path: "contato"
 	resources :photos, path: :produtos
 	resources :categories do
 		resources :subcategories

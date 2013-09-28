@@ -1,9 +1,14 @@
 header: h2 Contato
-p Por favor, preencha os campos abaixo.
 
-.row
+.row ng-controller="ContactsController"
 	.col-xs-6
-		= simple_form_for Contact.new do |f|
+		.msg ng-hide="estado=='São Paulo'"
+			p Nosso sistema detectou que você mora em {{estado="#{@estado}"}}. Todavia, apenas entregamos para o estado de São Paulo.
+			= link_to "Estou ciente e desejo entrar em contato", "#", class: "btn btn-primary", "ng-click" => "mostrar_contato=true", "ng-hide" => "mostrar_contato"
+
+		= simple_form_for Contact.new, url:"/contato", html:{"name" => "contact", "ng-show" => "mostrar_contato || estado=='São Paulo'"} do |f|
+			p Por favor, preencha os campos abaixo.
 			= f.input :name, input_html: {class: "form-control"}, label: "Seu nome"
 			= f.input :email, input_html: {class: "form-control"}, label: "Seu e-mail (para entrarmos em contato)"
 			= f.input :message, input_html: {class: "form-control", rows: 10}, label: "Sua mensagem, dúvida ou sugestão"
+			= f.submit "Enviar", class: "btn btn-large btn-primary pull-right"

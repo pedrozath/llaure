@@ -22,7 +22,12 @@ class PhotosController < ApplicationController
 		@current_page = "produtos"
 		@photo = Photo.find(params[:id])
 		@photos = @photo.subcategory.category.photos
-		# request.xhr? ? render(partial: "main_photo") : render(action: :index)
+		@open_graph_data = [
+			{title: "#{@photo.subcategory.category.title} / #{@photo.subcategory.title}"},
+			{image: @photo.image_url(:medium)},
+			{type: "website"},
+			{url: request.url}
+		]
 	end
 
 	def destroy

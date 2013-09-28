@@ -18,12 +18,12 @@ h1, h2, h3, h4, h5
 	:color $brown
 
 body
-	:padding 0 15px
+	// :padding 0 15px
 	:text-align left
 	:font-family $tipo_b
 	
 	> *
-		:padding 15px 0
+		:padding 15px
 	
 	> section
 		:margin-top 60px
@@ -36,7 +36,10 @@ body
 		:position fixed
 		:background-color $white
 		:width 100%
+		:min-width 960px
 		:z-index 5
+		:background-image image-url("bg.png")
+		:background-repeat repeat-x
 
 		> *
 			:float left
@@ -70,6 +73,7 @@ body
 
 		> header
 			:background-color transparent
+			:background none
 			:padding 15px
 
 			a 
@@ -77,6 +81,15 @@ body
 
 				&:hover
 					:color $white
+
+.overlay
+	:width 100%
+	:height 100%
+	:position fixed
+	:top 0
+	:left 0
+	:background transparent image-url("bg-pat.png") repeat
+	:z-index 1
 
 [data-action]
 	&:hover
@@ -125,7 +138,8 @@ figure
 	:width 100%
 
 .dynamic-column
-	:overflow hidden
+	:overflow visible
+	:min-width 960px
 
 section+section
 	:margin-top 15px
@@ -186,7 +200,7 @@ ul
 	:left 40%
 	:top 40%
 	:position absolute
-	:z-index 1
+	:z-index 3
 	:font-family Helvetica,Arial
 
 	h1

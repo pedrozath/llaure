@@ -6,6 +6,9 @@
 			= simple_form_for Category.new do |f|
 				= f.input :title, placeholder: "Nova Categoria", label: false
 
-figure#photo style="width:696px; height:522px; overflow: hidden; position: relative"
-	= image_tag @photo.image, width: "400"
-	figcaption= @photo.subcategory.title
+figure#photo style="width:696px; height:522px; overflow: visible; position: relative"
+	= image_tag @photo.image_url(:large), width: "400"
+	figcaption style="z-index: 100"
+		.fb-like style="z-index: 100" data={href:request.url, width:450, show_faces:false, send:"true", colorscheme:"dark"}
+
+	.fb-comments data-href=request.url data-width="470"

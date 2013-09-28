@@ -19,9 +19,12 @@ gem 'devise'
 gem 'simple_form', "3.0.0rc"
 gem 'protected_attributes'
 gem 'carrierwave'
+gem 'fog'
 gem 'mini_magick'
 gem 'font-awesome-sass-rails'
 gem 'bourbon'
+gem 'geocoder'
+gem 'angularjs-rails'
 
 group :production do
 	gem 'rails_12factor'

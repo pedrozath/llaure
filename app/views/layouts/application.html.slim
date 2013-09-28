@@ -1,10 +1,15 @@
 doctype html
-html
+html ng-app=""
 	head
 		title Capas para sofá – Loja localizada em Moema
 		= stylesheet_link_tag "application"
 		= javascript_include_tag "application"
 		= csrf_meta_tag
+		meta property="fb:admins" content="1219969805"
+		/ meta property="fb:app_id" content="472373296194510"
+		- if @open_graph_data
+			- for data in @open_graph_data
+				meta property="og:#{data.keys.first}" content=data.values.first
 	body class=(@content_class)
 		header
 			.logo= link_to "/" do
@@ -16,6 +21,7 @@ html
 
 					- if user_signed_in?
 						li= link_to "Encerrar sessão", destroy_user_session_path, method: :delete
+			.fb-like-box style="float: right" data={href:"https://www.facebook.com/ciadascapas.com.br", width:292, show_faces:false, header:false, stream:false,show_border:false } data-colorscheme=("dark" if @content_class)
 
 		.clearfix
 		section
@@ -23,3 +29,12 @@ html
 				nav.left-navigation= yield :left_column
 			.dynamic-column style=("padding-left: 200px" unless @content_class) = yield
 		footer
+		<div id="fb-root"></div>
+		javascript:
+			(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=472373296194510";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));

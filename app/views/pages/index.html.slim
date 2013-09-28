@@ -1,23 +1,17 @@
 .headline
 	markdown:
-		# Confeccionamos **capas para sofá** <br/> em **stretch** e **sarja** sob medida
+		# Confeccionamos **capas para sofá** <br/> em **sarja** e **stretch** sob medida
 		
 		Somos uma loja de decoração localizada em Moema. Aqui você encontra também almofadas, porta-copos, mantas e outros artigos.
 
 	= link_to "Quero saber mais!", "/produtos", class: "btn btn-primary"
 
+.overlay
 #fotos-de-capas.carousel.transition.slide data-inteval="1000" data-pause="false"
-	- Dir.chdir(Rails.root.join "app", "assets", "images")
-	- image_list = Dir.glob("fotos-de-capas/*").slice(0...3)
-	/ .carousel-indicators
-		ol
-			- image_list.each_with_index do |image, x|
-				li.active data-slide-to=(x+1)
-
 	.carousel-inner
-		- image_list.each_with_index do |image, x|
+		- @photos.each_with_index do |photo, x|
 			= content_tag :div, class: "item#{" active" if x==0}" do
-				= image_tag asset_path(image)
+				= image_tag photo.image_url :large
 		
 	= link_to "#fotos-de-capas", data:{slide:"prev"} do
 		span.left.carousel-control.icon-prev
