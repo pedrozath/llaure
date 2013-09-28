@@ -28,7 +28,17 @@ html ng-app=""
 			- unless @content_class 
 				nav.left-navigation= yield :left_column
 			.dynamic-column style=("padding-left: 200px" unless @content_class) = yield
+		
 		footer
+
+			.phone
+				i.icon-phone>
+				| (11)5542-5132
+
+			address
+				i.icon-globe><
+				| Avenida dos Eucaliptos, 800 — Moema / São paulo - SP 
+
 		<div id="fb-root"></div>
 		javascript:
 			(function(d, s, id) {

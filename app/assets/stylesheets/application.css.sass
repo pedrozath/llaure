@@ -59,8 +59,9 @@ body
 
 	&.full
 		:padding 0
+		:color $white
+		
 		> section
-			:color $white
 			:position absolute
 			:z-index -1
 			:padding 0
@@ -220,3 +221,28 @@ ul
 	.photo
 		width: 200px
 		height: 200px
+
+.phone, address, footer
+	:position fixed
+	:z-index 1
+	:bottom 0
+	:padding 15px
+	:font-family Futura
+	:text-transform uppercase
+	:font-size 20px
+
+footer
+	:background-color transparentize($white, 0.2)
+	:height 60px
+	:width 100%
+	:z-index 4
+
+body.full footer
+	:background none
+
+address
+	:right 0
+	:margin-bottom 0
+
+.phone
+	:left 0
