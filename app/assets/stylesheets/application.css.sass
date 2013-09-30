@@ -4,6 +4,19 @@
 
 @import "bourbon"
 
+@font-face
+	font-family: 'Futura'
+	src: local('☺'), url('/assets/fonts/futura.woff') format('woff')
+	font-weight: 500
+	font-style: normal
+
+@font-face
+	font-family: 'Futura'
+	src: local('☺'), url('/assets/fonts/futura-medium.woff') format('woff')
+	font-weight: 700
+	font-style: normal
+
+
 $true_black: #000
 $black: #333
 $white: #fff
@@ -96,7 +109,7 @@ body
 	&:hover
 		:text-decoration none
 
-#produtos .photo, #photo
+#produtos .photo, #photo, .map
 	:background-color $true_black
 	:border 1px solid $light_cyan
 
@@ -141,6 +154,7 @@ figure
 .dynamic-column
 	:overflow visible
 	:min-width 960px
+	:padding-bottom 100px
 
 section+section
 	:margin-top 15px
@@ -170,7 +184,7 @@ header
 h2, h3, h4, h5
 	:font-family $tipo_a
 	:font-style normal
-	:font-weight bolder
+	:font-weight 700
 	:text-transform uppercase
 
 h2

@@ -1,5 +1,5 @@
 Ciadascapas::Application.routes.draw do
-  get "questions/index"
+	get "questions/index"
 	devise_for :users
 	get "/admin", to: redirect("/users/sign_in")
 	root to: "pages#index"
