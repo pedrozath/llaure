@@ -51,4 +51,4 @@ class ImageZoom
 	log: (message...) -> 
 		# console.log message
 
-$ -> if $("#photo img").size() > 0 then new ImageZoom $("#photo img")
+$ -> $("#photo img").load -> new ImageZoom $("#photo img")
