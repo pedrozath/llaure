@@ -2,6 +2,6 @@ class PagesController < ApplicationController
 	def index
 		@content_class = "full"
 		@logo = "logo-cia-das-capas-negativo.png"
-		@photos = Photo.find [1, 2, 3]
+		@photos = ENV["FRONT_PHOTOS_IDS"]
 	end
 end
