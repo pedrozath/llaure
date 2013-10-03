@@ -13,14 +13,14 @@ header: h2 Contato
 		= simple_form_for Contact.new, url:"/contato", html:{"name" => "contact", "ng-show" => "mostrar_contato || estado=='São Paulo'"} do |f|
 			
 			markdown:
-				Para receber seu orçamento, por gentileza, preencha os campos abaixo, incluindo as medidas e uma foto.
+				Caso queira receber um orçamento, por gentileza, preencha os campos abaixo, incluindo as medidas de seu sofá.
 
 			= f.input :name, input_html: {class: "form-control"}, label: "Seu nome"
 			= f.input :email, input_html: {class: "form-control"}, label: "Seu e-mail (para entrarmos em contato)"
 			= f.input :message, input_html: {class: "form-control", rows: 10}, label: "Sua mensagem, dúvida ou sugestão"
 
 			.checkbox: label
-				| Incluir medidas?
+				| Incluir medidas do sofá?
 				= f.input_field :incluir_medidas, as: :boolean, "ng-model" => "incluir_medidas"
 
 			.medidas ng-show="incluir_medidas" ng-init="incluir_medidas=false"

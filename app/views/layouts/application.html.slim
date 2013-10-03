@@ -3,6 +3,7 @@ html ng-app=""
 	head
 		title Capas para sofá – Loja localizada em Moema
 		= stylesheet_link_tag "application"
+		= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCiTZFrg9Mn1ZpMp_FiI3631vnQbf6xzkM&sensor=true"
 		= javascript_include_tag "application"
 		= csrf_meta_tag
 		meta property="fb:admins" content="1219969805"
@@ -46,3 +47,13 @@ html ng-app=""
 			  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=472373296194510";
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-23600296-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
