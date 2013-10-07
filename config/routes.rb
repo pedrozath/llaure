@@ -5,6 +5,7 @@ Ciadascapas::Application.routes.draw do
 	get "/admin", to: redirect("/users/sign_in")
 	root to: "pages#index"
 	get "/produto/:id" => "photos#show"
+	get "/capas-para-sofa" => "photos#index"
 	get "/produtos/:category/(:subcategory)" => "photos#index"
 	
 	resources :questions, path: "duvidas"
