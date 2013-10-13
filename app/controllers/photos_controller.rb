@@ -6,14 +6,20 @@ class PhotosController < ApplicationController
 		render text: "tudo certo!"
 	end
 
+	def update
+		@photo = Photo.find(params[:id])
+		@photo.update_attributes params[:photo]
+		redirect_to @photo
+	end
+
 	def index
 		@current_page = "produtos"
-		@photos = if params[:subcategory]
-			Subcategory.find(params[:subcategory]).photos
-		elsif params[:category]
-			Category.find(params[:category]).photos
-		else
-			Photo.all
+		@photos = if params[:subcategory_id]
+				Subcategory.friendly.find(params[:subcategory_id]).photos
+			elsif params[:category_id]
+				Category.friendly.find(params[:category_id]).photos
+			else
+				Photo.all
 		end
 		request.xhr? ? render(partial: "photo", collection: Photo.all) : render
 	end

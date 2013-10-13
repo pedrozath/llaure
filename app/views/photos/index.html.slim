@@ -11,7 +11,7 @@
 	hr
 
 - if @photos.any?
-	#produtos= render(partial: "photos/photo", collection: @photos)
+	#produtos= render(partial: "photos/photo", collection: @photos.compact)
 
 - else
 	p Estamos em manutenção. No momento não temos fotos de produtos.
@@ -20,7 +20,7 @@
 	.clearfix
 	hr
 
-	= simple_form_for Photo.new, html: { class: "dropzone form-horizontal" } do |f|
+	= simple_form_for [Photo.new], html: { class: "dropzone form-horizontal" } do |f|
 		p Preencha os campos abaixo e arraste as imagens aqui.
 		= f.input :category, label: "Selecione uma categoria", collection: Category.all
 		= f.input :new_category, label: "… ou crie uma nova"

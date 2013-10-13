@@ -4,15 +4,20 @@ Ciadascapas::Application.routes.draw do
 	devise_for :users
 	get "/admin", to: redirect("/users/sign_in")
 	root to: "pages#index"
-	get "/produto/:id" => "photos#show"
-	get "/capas-para-sofa" => "photos#index"
-	get "/produtos/:category/(:subcategory)" => "photos#index"
+	get "/produtos" => "photos#index"
 	
 	resources :questions, path: "duvidas"
 	resources :contacts, path: "contato"
-	resources :photos, path: :produtos
-	resources :categories do
-		resources :subcategories
+
+	resources :photos, path: "fotos"
+
+
+	resources :categories, path: "" do
+		resources :photos, path: "fotos"
+		resources :subcategories, path: "tipos" do
+			resources :photos, path: "fotos"
+		end
 	end
+
 	get "/:action" => "pages"
 end
