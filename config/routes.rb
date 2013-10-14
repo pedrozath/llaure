@@ -5,10 +5,11 @@ Ciadascapas::Application.routes.draw do
 	get "/admin", to: redirect("/users/sign_in")
 	root to: "pages#index"
 	get "/produtos" => "photos#index"
+	get "/localizacao" => "pages#localizacao"
+	get "/capas-para-sofa", to: redirect("/capas-para-sofa/fotos")
 	
 	resources :questions, path: "duvidas"
 	resources :contacts, path: "contato"
-
 	resources :photos, path: "fotos"
 
 
@@ -19,5 +20,4 @@ Ciadascapas::Application.routes.draw do
 		end
 	end
 
-	get "/:action" => "pages"
 end
