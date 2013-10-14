@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130821133325) do
+ActiveRecord::Schema.define(version: 20131013191757) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
 
   create_table "contacts", force: true do |t|
     t.string   "name"
@@ -32,6 +38,7 @@ ActiveRecord::Schema.define(version: 20130821133325) do
     t.datetime "updated_at"
     t.string   "image"
     t.integer  "subcategory_id"
+    t.string   "description"
   end
 
   create_table "photos_tags", id: false, force: true do |t|
@@ -51,7 +58,10 @@ ActiveRecord::Schema.define(version: 20130821133325) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
+    t.string   "slug"
   end
+
+  add_index "subcategories", ["slug"], name: "index_subcategories_on_slug", unique: true, using: :btree
 
   create_table "tags", force: true do |t|
     t.string   "name"

@@ -1,7 +1,10 @@
 class Photo < ActiveRecord::Base
 	belongs_to :subcategory
 
-	attr_accessible :subcategory_id, :image, :new_category, :new_subcategory, :category, :subcategory
+	attr_accessible :subcategory_id, :image, 
+	:new_category, :new_subcategory, :category, 
+	:subcategory, :description
+	
 	mount_uploader :image, ImageUploader
 
 	attr_accessor :category
