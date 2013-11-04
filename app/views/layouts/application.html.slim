@@ -1,7 +1,8 @@
 doctype html
 html ng-app=""
 	head
-		title Capas para sofá – Loja localizada em Moema
+		- @title ||= "Capas de sofás"
+		title= @title
 		= stylesheet_link_tag "application"
 		= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCiTZFrg9Mn1ZpMp_FiI3631vnQbf6xzkM&sensor=true"
 		= javascript_include_tag "application"
