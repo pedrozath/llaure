@@ -15,7 +15,9 @@ class PhotosController < ApplicationController
 	def index
 		@current_page = "produtos"
 		@photos = if params[:subcategory_id]
-				Subcategory.friendly.find(params[:subcategory_id]).photos
+				subcategory = Subcategory.friendly.find(params[:subcategory_id])
+				@title = "Capas de sofás em "+subcategory.title
+				subcategory.photos
 			elsif params[:category_id]
 				Category.friendly.find(params[:category_id]).photos
 			else
