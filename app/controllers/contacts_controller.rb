@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
     end
 
     def new
-        @estado = request.location.data["region_name"]
+        # @estado = request.location.data["region_name"]
     end
 
     def create
