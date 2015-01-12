@@ -25,7 +25,7 @@ gem 'font-awesome-sass-rails'
 gem 'bourbon'
 gem 'geocoder'
 gem 'angularjs-rails'
-gem 'friendly_id'
+gem 'friendly_id', github: 'FriendlyId/friendly_id', branch: 'rails4'
 
 group :production do
 	gem 'rails_12factor'
