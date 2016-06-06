@@ -20,12 +20,19 @@
 $true_black: #000
 $black: #333
 $white: #fff
-$brown: #75341b
-$cyan: #2d737e
+$cyan: #6F25A6
+$brown: $cyan
 $light_cyan: transparentize($cyan, 0.8)
 
 $tipo_a: "Futura"
 $tipo_b: "Georgia"
+
+.btn
+	background-color: $cyan
+	border-color: #3B1F53
+
+	&:hover
+		background-color: #AC68E6
 
 h1, h2, h3, h4, h5
 	:color $brown
@@ -37,10 +44,11 @@ body
 	:padding-bottom 40px
 	
 	> *
-		:padding 15px
+		:padding-top 30px
+		:padding-left 30px
 	
 	> section
-		:margin-top 60px
+		:margin-top 100px
 		:overflow hidden
 		
 
@@ -53,7 +61,7 @@ body
 		:width 100%
 		:min-width 960px
 		:z-index 5
-		:background-image image-url("bg.png")
+		// :background-image image-url("bg.png")
 		:background-repeat repeat-x
 
 		> *
@@ -164,7 +172,7 @@ section+section
 .left-navigation
 	:width 200px
 	:position fixed
-	:margin 0 15px
+	:margin 0
 
 .nav-pills li a
 	:border-radius 0

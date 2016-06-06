@@ -1,7 +1,7 @@
 doctype html
 html ng-app=""
 	head
-		- @title ||= "Capas de sofás"
+		- @title ||= "Capas para sofá"
 		title= @title
 		= stylesheet_link_tag "application"
 		= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCiTZFrg9Mn1ZpMp_FiI3631vnQbf6xzkM&sensor=true"
@@ -15,7 +15,7 @@ html ng-app=""
 	body class=(@content_class)
 		header
 			.logo= link_to "/" do
-				= image_tag (@logo || "logo-cia-das-capas.png"), size: "128x60"
+				= image_tag (@logo || "llaure-logo.png"), height: "100"
 			nav
 				ul.nav.nav-pills
 					- for item in ["produtos", "dúvidas", "contato"]
@@ -34,11 +34,9 @@ html ng-app=""
 		footer
 			.phone
 				i.icon-phone>
-				|(11)5542-5132
+				|(11)96718-2405
 				br
 				|(11)4371-5952
-			address
-				i.icon-globe><
 
 		<div id="fb-root"></div>
 		javascript:
@@ -46,7 +44,7 @@ html ng-app=""
 			  var js, fjs = d.getElementsByTagName(s)[0];
 			  if (d.getElementById(id)) return;
 			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=472373296194510";
+			  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=187349694998484";
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
 
