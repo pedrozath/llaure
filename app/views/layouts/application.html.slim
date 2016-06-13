@@ -7,8 +7,15 @@ html ng-app=""
 		= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCiTZFrg9Mn1ZpMp_FiI3631vnQbf6xzkM&sensor=true"
 		= javascript_include_tag "application"
 		= csrf_meta_tag
+		meta property="description" content="Aqui você encontra capas para sofá pronta-entrega e sob-medida. Stretch, sarja e outros tecidos"
+		link href='https://plus.google.com/b/108130013101747495720/+CapasparasofaBr' rel='publisher'
 		meta property="fb:admins" content="1219969805"
-		/ meta property="fb:app_id" content="472373296194510"
+		meta property="fb:app_id" content="472373296194510"
+		meta http-equiv="content-language" content="pt-br"
+		meta http-equiv="content-type" content="text/html; charset=UTF-8"
+		meta name="keywords" content="Capas para sofá, Sarja, Stretch, Pronta-entrega, Sob-medida"
+		
+
 		- if @open_graph_data
 			- for data in @open_graph_data
 				meta property="og:#{data.keys.first}" content=data.values.first
