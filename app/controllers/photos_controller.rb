@@ -21,8 +21,9 @@ class PhotosController < ApplicationController
 			elsif params[:category_id]
 				Category.friendly.find(params[:category_id]).photos
 			else
-				Photo.all
+				Photo.includes(:subcategory => [:category]).all
 		end
+		@categories = Category.includes(:subcategories).all
 		request.xhr? ? render(partial: "photo", collection: Photo.all) : render
 	end
 

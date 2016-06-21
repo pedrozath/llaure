@@ -1,0 +1,16 @@
+- if user_signed_in?
+    = link_to 'Nova postagem', new_post_path
+h1 Postagens recentes
+.articles
+    - @posts.each do |post|
+        .post
+            = image_tag post.photo.image.url(:small), style: "height: 100px; width: auto"
+            .desc
+                h2 = post.title
+                p = truncate post.body, length: 100, separator: " "
+                = link_to "Ler mais", post, class: "btn btn-small"
+
+                - if user_signed_in?
+                    ul
+                        li = link_to 'Editar', edit_post_path(post)
+                        li = link_to 'Apagar', post, data: { confirm: 'Are you sure?' }, method: :delete

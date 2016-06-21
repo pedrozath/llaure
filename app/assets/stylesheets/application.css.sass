@@ -7,13 +7,13 @@
 
 @font-face
 	font-family: 'Futura'
-	src: local('☺'), asset-url("/assets/fonts/futura.woff") format('woff')
+	src: local('☺'), asset-url("futura.woff") format('woff')
 	font-weight: 500
 	font-style: normal
 
 @font-face
 	font-family: 'Futura'
-	src: local('☺'), asset-url("/assets/fonts/futura-medium.woff") format('woff')
+	src: local('☺'), asset-url("futura-medium.woff") format('woff')
 	font-weight: 700
 	font-style: normal
 
@@ -21,15 +21,15 @@
 $true_black: #000
 $black: #333
 $white: #fff
-$cyan: #6F25A6
-$brown: $cyan
-$light_cyan: transparentize($cyan, 0.8)
+$purple: #6F25A6
+$brown: $purple
+$light_cyan: transparentize($purple, 0.8)
 
 $tipo_a: "Futura"
 $tipo_b: "Georgia"
 
 .btn
-	background-color: $cyan
+	background-color: $purple
 	border-color: #3B1F53
 
 	&:hover
@@ -37,12 +37,13 @@ $tipo_b: "Georgia"
 
 h1, h2, h3, h4, h5
 	:color $brown
+	:font-family $tipo_a
 
 body
 	// :padding 0 15px
 	:text-align left
 	:font-family $tipo_b
-	:padding-bottom 40px
+	:padding-bottom 100px
 	
 	> *
 		:padding-top 30px
@@ -50,8 +51,6 @@ body
 	
 	> section
 		:margin-top 100px
-		:overflow hidden
-		
 
 		img
 			:width 100%
@@ -74,7 +73,7 @@ body
 
 			a
 				:font-family $tipo_a
-				:color $cyan
+				:color $purple
 				:font-size 12px
 				:font-style normal
 				:text-transform uppercase
@@ -163,9 +162,11 @@ figure
 	:width 100%
 
 .dynamic-column
-	:overflow visible
-	:min-width 960px
+	// :overflow visible
+	// :min-width 960px
 	:padding-bottom 100px
+	// width: calc(100% - 200px)
+	// :width 100%
 
 section+section
 	:margin-top 15px
@@ -281,3 +282,45 @@ address
 	:font-style normal
 	:text-transform uppercase
 	:letter-spacing 2px
+
+.images
+	width: 100%
+	margin: -10px 0 0 -10px
+
+	> img 
+		margin: 10px
+		width: auto
+		height: auto
+		flex-grow: 1
+		cursor: pointer
+		flex-shrink: 1
+
+		&.selected
+			border: 2px solid $purple
+
+article
+	> *
+		margin: 10px 0
+	p
+		font-size: 20px
+		font-family: Georgia
+		width: 600px
+		line-height: 1.45
+
+.articles
+	.post
+		margin-left: -10px
+		margin-top: -10px
+		display: table
+		border-bottom: 1px solid #ccc
+		margin-bottom: 10px
+		width: 100%
+
+		& > *
+			float: left
+			margin: 20px 10px
+
+.btn
+	color: #fff
+
+

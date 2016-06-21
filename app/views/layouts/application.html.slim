@@ -25,7 +25,7 @@ html ng-app=""
 				= image_tag (@logo || "llaure-logo.png"), height: "100"
 			nav
 				ul.nav.nav-pills
-					- for item in ["produtos", "dúvidas", "contato"]
+					- for item in ["produtos", "dúvidas", "blog", "contato"]
 						li= link_to item, "/"+item.parameterize, class: ("active" if item == @current_page )
 
 					- if user_signed_in?

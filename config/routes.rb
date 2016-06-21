@@ -1,4 +1,5 @@
 Ciadascapas::Application.routes.draw do
+ 	resources :posts, path: "blog"
 	get "/webmail" => redirect("http://mail.google.com/a/capasparasofa.com.br")
 	get "questions/index"
 	devise_for :users

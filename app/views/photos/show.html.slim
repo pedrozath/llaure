@@ -8,7 +8,7 @@
 				= f.input :title, placeholder: "Nova Categoria", label: false
 
 figure#photo style="min-width:696px; min-height:522px; overflow: visible; position: relative; margin: 0"
-	= image_tag @photo.image_url(:large), width: "400"
+	= image_tag @photo.image_url(:large), width: "400", alt: @photo.description
 	figcaption style="z-index: 100"
 		markdown:
 			#{@photo.description}

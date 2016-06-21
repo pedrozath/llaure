@@ -1,0 +1,25 @@
+= simple_form_for(@post) do |f|
+    = f.error_notification
+
+    .form-inputs
+        = f.input :title
+        = f.input :body
+        = f.input :photo_id, as: :hidden
+
+        p Escolha uma imagem
+        .images
+            - Photo.all.each do |photo|
+                = image_tag photo.image.url(:small), data:{id: photo.id}
+
+    .form-actions
+        = f.button :submit
+
+coffee:
+    photo_id_field = $("#post_photo_id")
+    console.log photo_id_field.val()
+    $("[data-id=\""+photo_id_field.val()+"\"]").addClass("selected")
+    $(".images").on "click", "img", (e) ->
+        $(".images img.selected").removeClass("selected")
+        selected_image = $(e.currentTarget)
+        selected_image.addClass("selected")
+        photo_id_field.val selected_image.attr "data-id"

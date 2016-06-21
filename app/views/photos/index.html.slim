@@ -1,6 +1,6 @@
 - content_for :left_column
 	#categories
-		= render(partial: "categories/category", collection: Category.all)
+		= render(partial: "categories/category", collection: @categories)
 		- if user_signed_in?
 			hr
 			= simple_form_for Category.new do |f|
@@ -14,7 +14,7 @@
 	#produtos= render(partial: "photos/photo", collection: @photos.compact)
 
 - else
-	p Estamos em manutenção. No momento não temos fotos de produtos.
+	p Estamos em manutenção. No momento não temos fotos dos produtos.
 
 - if user_signed_in?
 	.clearfix

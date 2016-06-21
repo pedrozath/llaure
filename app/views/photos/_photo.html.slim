@@ -1,7 +1,7 @@
 - if photo.subcategory
 	.photo style="height: #{user_signed_in? ? 200 : 152 }px"
 		= link_to [photo.subcategory.category, photo.subcategory, photo]
-			= image_tag photo.image.url(:small), size: "200x150"
+			= image_tag photo.image.url(:small), size: "200x150", alt: photo.description
 	
 		- if user_signed_in? 
 			nav

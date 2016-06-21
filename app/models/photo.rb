@@ -1,9 +1,10 @@
-class Photo < ActiveRecord::Base
+class Photo < ApplicationRecord
 	belongs_to :subcategory
+	has_many :posts
 
-	attr_accessible :subcategory_id, :image, 
-	:new_category, :new_subcategory, :category, 
-	:subcategory, :description
+	# attr_accessible :subcategory_id, :image, 
+	# :new_category, :new_subcategory, :category, 
+	# :subcategory, :description
 	
 	mount_uploader :image, ImageUploader
 

@@ -1,18 +1,14 @@
 #= require jquery
 #= require jquery_ujs
 #= require jquery.turbolinks
-#= require angular
 #= require bootstrap
-#= require dynamic_column
 #= require dropzone
 #= require image_zoom
-#= require contacts_controller
-#= require maps
 
 $ -> 
 	do $(".carousel").carousel
-	new DynamicColumn ".dynamic-column"
-	$(window).load -> $(window).resize()
+	# new DynamicColumn ".dynamic-column"
+	# $(window).load -> $(window).resize()
 
 	refresh = (resource) -> 
 		$.get "/#{resource}", (html) -> 

@@ -1,7 +1,7 @@
-class Subcategory < ActiveRecord::Base
+class Subcategory < ApplicationRecord
 	extend FriendlyId
 	friendly_id :title, use: :slugged
-	attr_accessible :title, :category_id
+	# attr_accessible :title, :category_id
 	belongs_to :category
 	has_many :photos
 end
